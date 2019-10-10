@@ -16,11 +16,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('*', function(req, res) {
-    console.log('url: ', req.url);
     const { id } = req.query;
     csv(id, redirect => res.redirect(redirect));
-    // res.json({ message: 'hello world ' });
-    // res.redirect('https://youtube.com');
 });
 
 // app.use('/', indexRouter);
